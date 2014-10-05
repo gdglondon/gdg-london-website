@@ -16,7 +16,7 @@ import datetime
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 with open(os.path.join(os.path.dirname(__file__), "api.json"), "r") as f:
-  APIKEY = json.load(f)
+  APIJSON = json.load(f)
 
 if 'Development' in os.environ['SERVER_SOFTWARE']:
 	siteURL = 'http://localhost:8080/'
@@ -33,7 +33,7 @@ class GooglePlusPosts(db.Model):
 class Helper:
   def __init__(self):
     self.profileId = "+Gdg-london"
-    self.apiKey = APIKEY
+    self.apiKey = APIJSON["key"]
 
   def storeGooglePlusPosts(self):
     apiendpoint = "https://www.googleapis.com/plus/v1/people/" \
