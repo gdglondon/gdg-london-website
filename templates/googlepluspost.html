@@ -1,0 +1,57 @@
+            <!-- Post ID: {{ post["id"] }} -->
+{% set actor = None %}
+{% if post["verb"] == "post" %} 
+  {% set actor = post["actor"] %} 
+{% else %} 
+  {% set actor = post["object"]["actor"] %}
+{% endif %}
+
+            <li class="guides-list__item g--half theme--introduction-to-media {% if i is odd %}g--last{% endif %}">
+            <div class="primary-content">
+              <!--<h3 class="xlarge"><a href="#ignore-click" title="Go to Multi-Device Layouts" class="themed">Multi-Device Layouts</a></h3>-->
+              <p>
+                <strong>
+                  <a href="{{ actor["image"]["url"] }}">
+                    <img style="-webkit-border-radius: 50%; border-radius: 50%; margin: 0px 10px 0px 0px;" src="{{ actor["image"]["url"] }}" />{{ actor["displayName"] }}</a> originally shared this <a href="{{ post["url"] }}" target="_blank">post</a>
+                </strong>
+              </p>
+              <p>{{ post["object"]["content"] }}</p>
+
+<div style="margin-top:5%">
+{% for attachment in post["object"]["attachments"]%}
+ <!-- article -->
+  {% if attachment["objectType"] == "article" %}   
+  <a href="{{ attachment["url"] }}" title="{{ attachment["displayName"] }}"> 
+    <img src="{{ attachment["image"]["url"] }}" title="{{ attachment["displayName"] }}" />
+  </a>
+  <p><a href="{{ attachment["url"] }}">{{ attachment["displayName"] }}</a></p>
+  <p>{{ attachment["content"] }}</p>
+  {% endif %} 
+
+  <!-- youtube -->
+  {% if attachment["objectType"] == "video" %}
+  <iframe style="width:100%; height:260px;" src="{{ attachment["embed"]["url"] }}" frameborder="0" allowfullscreen></iframe>
+  {% endif %}  
+{% endfor %}
+</div>
+            </div>
+            <div class="secondary-content">
+              <span class="icon-circle themed--background"><i class="icon icon-plus"></i></span>
+              <ol class="list-links list-links--secondary">
+                <li><a href="{{ post["url"] }}" title="Read the lesson Responsive Web Design Fundamentals">+{{
+        post["object"]["plusoners"]["totalItems"] }}</a></li>
+                <li><a href="{{ post["url"] }}" title="Read the lesson Responsive Web Design Patterns">{{
+        post["object"]["replies"]["totalItems"] }} comment(s)</a></li>
+                <li><a href="{{ post["url"] }}" title="Read the lesson Navigation and Action Patterns">{{
+        post["object"]["resharers"]["totalItems"] }} reshare(s)</a></li>
+              </ol>
+            </div>
+            </li>
+
+<style>
+.list-links--secondary li {
+padding-left: 0;
+display: inline-block;
+margin: 0px 5px 0px 5px;
+}
+</style>
