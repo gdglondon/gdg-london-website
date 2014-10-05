@@ -13,6 +13,9 @@ then
   git submodule update
 fi
 
+
+git submodule update --remote
+
 # build devfest site
 jekyll build --source static/devfest-2014 --destination static/devfest
 
