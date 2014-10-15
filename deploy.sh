@@ -7,17 +7,11 @@ then
 fi
 
 # checkout submodules
-if [ ! -d "static/web-starter-kit" ] || [ ! -d "static/devfest-2014" ];
+if [ ! -d "static/web-starter-kit" ];
 then
   git submodule init
   git submodule update
 fi
-
-
-git submodule update --remote
-
-# build devfest site
-jekyll build --source static/devfest-2014 --destination static/devfest
 
 # deploy to App Engine
 appcfg.py -v update .
