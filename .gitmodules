@@ -4,6 +4,3 @@
 [submodule "static/zeppelin"]
 	path = static/zeppelin
 	url = git@github.com:nawaidshamim/zeppelin.git
-[submodule "static/devfest-2014"]
-	path = static/devfest-2014
-	url = git@github.com:gdglondon/devfest-2014.git

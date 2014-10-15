@@ -34,18 +34,6 @@ handlers:
 - url: /fonts
   static_dir: static/web-starter-kit/app/fonts
 
-# devfest site
-- url: /devfest/
-  static_files: static/devfest/index.html
-  upload: static/devfest/index.html
-
-- url: /devfest/(.*)/$
-  static_files: static/devfest/\1/index.html
-  upload: static/devfest/(.*)/index.html
-
-- url: /devfest
-  static_dir: static/devfest
-
 # cron job
 - url: /cron/gplus
   script: main.app
