@@ -86,15 +86,10 @@ class GDGHandler(webapp2.RequestHandler):
     template = jinja_environment.get_template('templates/index.html')
     self.response.write(template.render({"posts": posts}))
 
-class DevfestHandler(webapp2.RequestHandler):
-  def get(self):
-    self.response.headers['Content-Type'] = 'text/html'
-    self.response.set_status('301',message=None)
-    self.redirect(siteURL + "devfest/")
-
 URL_Mapping = [
   webapp2.Route('/', handler=GDGHandler, name='GDG London'), 
-  webapp2.Route('/devfest', handler=DevfestHandler, name='Devfest'),
+  routes.RedirectRoute('/devfest', redirect_to='http://devfest.gdg-london.com',
+    name='Devfest', strict_slash=True),
   webapp2.Route('/cron/gplus', handler=CronHandler)
 ]
 
