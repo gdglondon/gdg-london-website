@@ -133,15 +133,15 @@
               <li class="featured-list__item clear">
                 <div class="container-small">
                   <div class="featured-list__content g--half">
-                    <h3>Women in Tech Event at London Basecamp</h3>
+                    <h3>GDG Devfest London 2014</h3>
                     <p>
-                    <i>Are you free on 16th October?</i> Come and try Glass, hear the major principles of developing for <span class="proflinkWrapper"><span class="proflinkPrefix">+</span><a class="proflink" href="https://plus.google.com/111626127367496192147" oid="111626127367496192147">Google Glass</a></span>  from Developer Advocate <span class="proflinkWrapper"><span class="proflinkPrefix">+</span><a class="proflink" href="https://plus.google.com/102632306980723680145" oid="102632306980723680145">Hoi Lam</a></span>  and listen to <span class="proflinkWrapper"><span class="proflinkPrefix">+</span><a class="proflink" href="https://plus.google.com/113543332195081381102" oid="113543332195081381102">Adriana Vecchioli</a></span>  share her experience of founding Glassware startup <span class="proflinkWrapper"><span class="proflinkPrefix">+</span><a class="proflink" href="https://plus.google.com/115748797085931169898" oid="115748797085931169898">Find.It</a></span>
+                    Devfest will be 2 days full of talks, fun and networking on Saturday 15th Nov, workshops on Sunday (will be announced separately). Both days will be held in <span class="proflinkWrapper"><span class="proflinkPrefix">+</span><a class="proflink aaTEdf" href="/103477224693502326848" oid="103477224693502326848">Campus London</a></span>
                     </p>
-                    <a href="https://events.withgoogle.com/developingforglass/" target="_blank" class="cta--primary">Register</a>
+                    <a href="https://www.eventbrite.co.uk/e/devfest-london-2014-registration-13372023081" target="_blank" class="cta--primary">Register</a>
                   </div>
                   <div class="featured-list__img-wrapper g--half g--last">
                     <div class="featured-list__img">
-                      <img src="https://lh6.ggpht.com/eqn9IzsaEt6ykulCiT4HrS0x9dtqV42bEUxRFakfAneZKIbCZ2B2krHKu84qKFKFzSJbZeQSavMpaKC9GCf4hw=w2000" alt="small image placeholder example">
+                      <img style="height:auto" src="/static/assets/devfest-2014-logo.png" alt="GDG Devfest London 2014">
                     </div>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ if (!jqueryLoaded) {
     if (script.readyState && script.onload!==null){
         script.onreadystatechange= function () {
               if (this.readyState == 'complete') mce_preload_check();
-        }    
+        }
     }
 }
 
@@ -342,7 +342,7 @@ function mce_init_form(){
                                         this.value = '';
                       } else {
                           if (/\[day\]/.test(fields[0].name)){
-                                              this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;                         
+                                              this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;
                           } else {
                                               this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
                                           }
@@ -368,12 +368,12 @@ function mce_init_form(){
                                     });
                             });
                         return mce_validator.form();
-                    }, 
+                    },
                     success: mce_success_cb
                 };
       $('#mc-embedded-subscribe-form').ajaxForm(options);
-      
-      
+
+
     });
 }
 function mce_success_cb(resp){
@@ -409,11 +409,11 @@ function mce_success_cb(resp){
         try{
             if (index== -1){
                 $('#mce-'+resp.result+'-response').show();
-                $('#mce-'+resp.result+'-response').html(msg);            
+                $('#mce-'+resp.result+'-response').html(msg);
             } else {
                 err_id = 'mce_tmp_error_msg';
                 html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
-                
+
                 var input_id = '#mc_embed_signup';
                 var f = $(input_id);
                 if (ftypes[index]=='address'){
@@ -442,6 +442,6 @@ function mce_success_cb(resp){
 }
 
 </script>
-    
+
   </body>
 </html>
