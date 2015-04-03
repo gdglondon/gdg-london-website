@@ -20,10 +20,12 @@
 <div style="margin-top:5%">
 {% for attachment in post["object"]["attachments"]%}
  <!-- article -->
-  {% if attachment["objectType"] == "article" %}   
+  {% if attachment["objectType"] == "article" %}
+  {% if "image" in attachment %}
   <a href="{{ attachment["url"] }}" title="{{ attachment["displayName"] }}"> 
     <img src="{{ attachment["image"]["url"] }}" title="{{ attachment["displayName"] }}" />
   </a>
+  {% endif %}
   <p><a href="{{ attachment["url"] }}">{{ attachment["displayName"] }}</a></p>
   <p>{{ attachment["content"] }}</p>
   {% endif %} 
