@@ -7,6 +7,7 @@ checkdeps:
 
 updatedeps:
 	pip install -r requirements.txt
+	gaenv
 
 lint:
 	@PYTHONPATH=`./utils/get_gae_pythonpath.sh` \

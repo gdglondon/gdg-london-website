@@ -1,5 +1,6 @@
 .idea
 *.pyc
 
+gaenv_lib/
 api.json
 static/devfest/*
