@@ -2,5 +2,5 @@
 *.pyc
 
 gaenv_lib/
-api.json
+config.json
 static/devfest/*

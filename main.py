@@ -14,8 +14,8 @@ from webapp2_extras import routes
 JINJA = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-with open(os.path.join(os.path.dirname(__file__), "api.json"), "r") as f:
-    APIJSON = json.load(f)
+with open(os.path.join(os.path.dirname(__file__), "config.json"), "r") as f:
+    CONFIG = json.load(f)
 
 
 class GooglePlusPosts(db.Model):
@@ -27,7 +27,7 @@ class GooglePlusPosts(db.Model):
 class Helper(object):
     def __init__(self):
         self.profile_id = "+Gdg-london"
-        self.api_key = APIJSON["key"]
+        self.api_key = CONFIG["google_plus_key"]
 
     def store_google_plus_posts(self):
         apiendpoint = "https://www.googleapis.com/plus/v1/people/" \
