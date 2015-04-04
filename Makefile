@@ -12,7 +12,7 @@ updatedeps:
 
 lint:
 	@PYTHONPATH=`./utils/get_gae_pythonpath.sh` \
-	pylint -r n -d C0301,C0111,E1101,W0232,R0903,R0904,E1103,W0231 ./*.py
+	python -c 'import pylint; pylint.run_pylint()' -r n -d C0301,C0111,E1101,W0232,R0903,R0904,E1103,W0231 ./*.py
 
 serve:
 	dev_appserver.py .
