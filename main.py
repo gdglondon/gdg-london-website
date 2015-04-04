@@ -42,28 +42,28 @@ class Helper(object):
             GooglePlusPosts(key_name=item["id"], PostJson=unicode(json.dumps(item), 'utf-8'),
                             PostTimestamp=post_timestamp).save()
 
-    def get_google_plus_posts(self):
-        #connect datastore and call function to get html for each post, do exception handling here
-        response = memcache.get("GooglePlusPosts")
-        if not response:
-            query = db.GqlQuery("SELECT * FROM GooglePlusPosts ORDER BY PostTimestamp DESC LIMIT 20")
-            posts = []
-            for item in query:
-                posts.append(json.loads(item.PostJson))
-            response = json.dumps(posts)
-            memcache.add("GooglePlusPosts", response, 60)
-        posts_in_html = []
-        posts = json.loads(response)
+def get_google_plus_posts():
+    #connect datastore and call function to get html for each post, do exception handling here
+    response = memcache.get("GooglePlusPosts")
+    if not response:
+        query = db.GqlQuery("SELECT * FROM GooglePlusPosts ORDER BY PostTimestamp DESC LIMIT 20")
+        posts = []
+        for item in query:
+            posts.append(json.loads(item.PostJson))
+        response = json.dumps(posts)
+        memcache.add("GooglePlusPosts", response, 60)
+    posts_in_html = []
+    posts = json.loads(response)
 
-        for i in range(0, len(posts)):
-            post = posts[i]
-            #try:
-            post_in_html = generate_html_google_plus_post(post, i)
-            posts_in_html.append(post_in_html)
-            #except:
-            posts_in_html.append("<!-- Failed to parse " + post["id"] + "-->")
+    for i in range(0, len(posts)):
+        post = posts[i]
+        #try:
+        post_in_html = generate_html_google_plus_post(post, i)
+        posts_in_html.append(post_in_html)
+        #except:
+        posts_in_html.append("<!-- Failed to parse " + post["id"] + "-->")
 
-        return posts_in_html
+    return posts_in_html
 
 def generate_html_google_plus_post(post, i):
     ''' returns HTML for Google+ post and exception return None '''
@@ -79,7 +79,7 @@ class GDGHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         # Generate Google+ post
-        posts = Helper().get_google_plus_posts()
+        posts = get_google_plus_posts()
         template = JINJA.get_template('templates/index.html')
         self.response.write(template.render({"posts": posts}))
 
