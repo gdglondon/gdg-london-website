@@ -6,8 +6,6 @@ checkdeps:
 	./utils/check_dependencies.sh
 
 updatedeps:
-	git submodule init
-	git submodule update
 	pip install -r requirements.txt
 
 lint:
