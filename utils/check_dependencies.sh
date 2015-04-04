@@ -10,6 +10,14 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
+which pylint >/dev/null 2>&1
+if [ "$?" != "0" ]; then
+  echo "Error: pylint not found."
+  echo
+  echo "  pip install -r requirements.txt"
+  exit 1
+fi
+
 which dev_appserver.py >/dev/null 2>&1
 if [ "$?" != "0" ]; then
   echo "Error: dev_appserver.py not found."
