@@ -1,2 +1,3 @@
-#pylint: disable=unused-import
-import gaenv_lib
+from google.appengine.ext import vendor
+
+vendor.add('lib')

@@ -1,6 +1,6 @@
 .idea
 *.pyc
 
-gaenv_lib/
+lib/
 config.json
 static/devfest/*

@@ -6,8 +6,9 @@ checkdeps:
 	./utils/check_dependencies.sh
 
 updatedeps:
-	pip install -r requirements.txt
-	gaenv
+	# --upgrade is buggy with --target, see https://github.com/pypa/pip/pull/2537
+	rm -rf lib/
+	pip install --target=lib/ -r requirements.txt
 
 lint:
 	@PYTHONPATH=`./utils/get_gae_pythonpath.sh` \
