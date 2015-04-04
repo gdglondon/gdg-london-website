@@ -25,6 +25,10 @@ git submodule update
 Git submodules suck anyway :poop:, we should replace :fire: it with
 any real and proper :shower: dependency manager ([bower](http://bower.io/)?)
 
+```
+make updatedeps
+```
+
 ### How to test changes locally?
 
 ```
