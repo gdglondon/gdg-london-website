@@ -36,11 +36,11 @@ handlers:
 
 # cron job
 - url: /cron/gplus
-  script: main.app
+  script: main.APP
   login: admin
 
 - url: /.*
-  script: main.app
+  script: main.APP
 
 libraries:
 - name: jinja2
