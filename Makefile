@@ -18,3 +18,4 @@ serve:
 
 deploy:
 	appcfg.py --version `git rev-parse --short HEAD` -v update .
+	appcfg.py set_default_version --version `git rev-parse --short HEAD` .
