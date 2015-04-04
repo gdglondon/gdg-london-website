@@ -17,4 +17,4 @@ serve:
 	dev_appserver.py .
 
 deploy:
-	appcfg.py -v update .
+	appcfg.py --version `git rev-parse --short HEAD` -v update .

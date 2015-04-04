@@ -1,5 +1,5 @@
 application: zinc-shard-358
-version: 6
+version: default
 runtime: python27
 api_version: 1
 threadsafe: no
