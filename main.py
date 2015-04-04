@@ -4,6 +4,7 @@ import webapp2
 import jinja2
 import json
 
+import events
 import google_plus
 from webapp2_extras import routes
 
@@ -30,13 +31,16 @@ class MainHandler(webapp2.RequestHandler):
 
         self.gplus = google_plus.Helper(
             CONFIG['google_plus_page_id'], CONFIG['google_plus_key'])
+        self.events = events.Helper(
+            CONFIG['eventbrite_uid'], CONFIG['eventbrite_key'])
 
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         template = self.jinja.get_template('templates/index.html')
 
         output = template.render({
-            "posts": self.gplus.get_google_plus_posts_html()
+            "posts": self.gplus.get_google_plus_posts_html(),
+            "events": self.events.get_events_html()
         })
 
         self.response.write(output)

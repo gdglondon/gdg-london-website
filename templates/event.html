@@ -1,0 +1,18 @@
+<li class="featured-list__item clear">
+  <div class="container-small">
+    <div class="featured-list__content{% if event['logo_url'] %} g--half{% endif %}">
+      <h3>{{ event['name']['text'] }}</h3>
+      <p>
+        {{ event['description']['text']|truncate(250) }}
+      </p>
+      <a href="{{ event['url'] }}" target="_blank" class="cta--primary">Register</a>
+    </div>
+    {% if event['logo_url'] %}
+    <div class="featured-list__img-wrapper g--half g--last">
+      <div class="featured-list__img">
+        <img style="height:auto" src="{{ event['logo_url'] }}" alt="{{ event['name']['text'] }}">
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</li>

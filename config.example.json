@@ -1,4 +1,6 @@
 {
 	"google_plus_page_id": "Whatever goes after https://plus.google.com/",
-	"google_plus_key": "See https://developers.google.com/+/api/oauth"
+	"google_plus_key": "See https://developers.google.com/+/api/oauth",
+	"eventbrite_uid": "",
+	"eventbrite_key": "See https://www.eventbrite.co.uk/myaccount/apps/"
 }
