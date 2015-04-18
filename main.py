@@ -43,9 +43,9 @@ class MainHandler(webapp2.RequestHandler):
 
 URL_MAPPING = [
     webapp2.Route('/', handler=MainHandler, name='GDG London'),
-    routes.RedirectRoute('/devfest', redirect_to='http://devfest.gdg-london.com',
-                         name='Devfest', strict_slash=True),
-    webapp2.Route('/cron/gplus', handler=CronHandler)
+    webapp2.Route('/cron/gplus', handler=CronHandler),
+    routes.RedirectRoute('/devfest', redirect_to='http://devfest.gdg-london.com', name='Devfest', strict_slash=True)
+
 ]
 
 APP = webapp2.WSGIApplication(URL_MAPPING, debug=False)
