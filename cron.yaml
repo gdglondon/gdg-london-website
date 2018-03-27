@@ -1,4 +1,0 @@
-cron:
-- description: Fetch posts from Google+ and store them in Datastore
-  url: /cron/gplus
-  schedule: every 10 minutes

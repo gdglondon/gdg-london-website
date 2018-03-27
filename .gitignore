@@ -1,6 +1,2 @@
 .idea
 *.pyc
-
-lib/
-config.json
-static/devfest/*

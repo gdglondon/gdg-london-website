@@ -1,6 +1,0 @@
-[submodule "static/web-starter-kit"]
-	path = static/web-starter-kit
-	url = git@github.com:gdglondon/web-starter-kit.git
-[submodule "static/zeppelin"]
-	path = static/zeppelin
-	url = git@github.com:nawaidshamim/zeppelin.git
